@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ofona Likaka | 3D Artist & Designer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#boat">Swinging Boat Ride</a></li>
+      <li><a href="#tabbi">Tabbi</a></li>
+      <li><a href="#gallery">Art Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- Intro Section -->
+  <section id="intro" class="hero fade-in">
+    <div class="hero-content">
+      <h1>Ofona Likaka</h1>
+      <p class="tagline">Creating immersive 3D worlds through art and code</p>
+      <a href="OLikaka_resume_.pdf" target="_blank" class="btn">View Resume</a>
+    </div>
+  </section>
+
+  <!-- Swinging Boat Ride Section -->
+  <section id="boat" class="project fade-in">
+    <h2>Swinging Boat Ride</h2>
+    <div class="project-content">
+      <div class="text">
+        <p>
+          Developed 2D design sketches and transformed them into detailed 3D models and simulations using Siemens NX,
+          bridging conceptual art and engineering design. Created and presented a project proposal, collaborating with two teammates
+          to deliver a fully functional prototype. Recognized with awards for innovation and execution, highlighting strong design vision and teamwork.
+        </p>
+      </div>
+      <div class="media">
+        <img src="Screenshot_2025-10-03_at_10.08.45_PM.png" alt="Swinging Boat Ride CAD Drawing" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabbi Project Section -->
+  <section id="tabbi" class="project fade-in">
+    <h2>Tabbi</h2>
+    <div class="project-content">
+      <div class="text">
+        <p>
+          Contributed original pixel art and UI assets using Procreate for <em>Tabbi</em>, a creative productivity app built during a hackathon.
+          Collaborated with a team of four to integrate visuals into the React-based prototype, using rapid iteration and design thinking
+          to deliver a polished, user-friendly experience.
+        </p>
+      </div>
+      <div class="media">
+        <video controls width="100%">
+          <source src="IMG_1462.mov" type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Art Gallery Section -->
+  <section id="gallery" class="gallery fade-in">
+    <h2>Art & 3D Creations</h2>
+    <div class="gallery-grid">
+      <img src="Screenshot_2025-10-03_at_10.08.45_PM.png" alt="3D Artwork Sample" />
+      <!-- Add more images below as you expand your gallery -->
+      <!-- Example: <img src="myartpiece2.png" alt="Additional artwork"> -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ofona Likaka | <a href="mailto:cm5678@wayne.edu">cm5678@wayne.edu</a></p>
+    <p>
+      <a href="https://linkedin.com/in/ofonal" target="_blank">LinkedIn</a> |
+      <a href="https://app.joinhandshake.com/profiles/ofonal" target="_blank">Handshake</a>
+    </p>
+  </footer>
+
+  <!-- Smooth Scroll + Fade-In Animation Script -->
+  <script>
+    // Smooth scroll navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fade-in effect
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
