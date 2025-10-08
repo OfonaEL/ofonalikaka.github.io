@@ -127,7 +127,30 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Buttons below projects */
+/* Tabbi Project Gallery */
+.tabbi-gallery {
+  flex: 1 1 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabbi-gallery img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabbi-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
 .buttons {
   text-align: center;
   margin-top: 2rem;
@@ -200,7 +223,7 @@ footer a:hover {
   transform: translateY(0);
 }
 
-/* Responsiveness */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.3rem;
@@ -208,5 +231,8 @@ footer a:hover {
   .project-content {
     flex-direction: column;
     text-align: center;
+  }
+  .tabbi-gallery img {
+    max-width: 90%;
   }
 }
